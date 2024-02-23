@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Car, CarType } from "../types";
+import { Car, CarFilter } from "../types";
 
 type Props = {
   cars: Car[];
-  carType: CarType;
+  carType: CarFilter;
 };
 
 const CarList = ({ cars, carType }: Props) => {

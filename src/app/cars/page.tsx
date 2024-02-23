@@ -3,13 +3,13 @@
 import CarList from "./CarList";
 import data from "../data.json";
 import { ChangeEvent, useState } from "react";
-import { CarType } from "../types";
+import { Car, CarFilter } from "../types";
 
 export default function Home() {
-  const [carTypeFilter, setCarTypeFilter] = useState<CarType>("ALL");
+  const [carTypeFilter, setCarTypeFilter] = useState<CarFilter>("ALL");
 
   const handleFilterChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setCarTypeFilter(event?.target?.value as CarType);
+    setCarTypeFilter(event?.target?.value as CarFilter);
   };
 
   return (
@@ -24,7 +24,7 @@ export default function Home() {
         <option value="PB">Petrol</option>
         <option value="SU">Sports Utility</option>
       </select>
-      <CarList cars={data.cars} carType={carTypeFilter} />
+      <CarList cars={data.cars as Car[]} carType={carTypeFilter} />
     </main>
   );
 }
