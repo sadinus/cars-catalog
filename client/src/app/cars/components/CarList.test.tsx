@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import CarList from "./CarList";
-import { Car } from "../types";
+import { Car } from "../../types";
 
 const mockCars: Car[] = [
   {
@@ -22,7 +22,7 @@ const mockCars: Car[] = [
 describe("CarList component", () => {
   it("renders correctly with provided cars", () => {
     const { getByText, getAllByRole } = render(
-      <CarList cars={mockCars} carType={"ALL"} />
+      <CarList cars={mockCars} carType="ALL" />
     );
 
     mockCars.forEach((car) => {

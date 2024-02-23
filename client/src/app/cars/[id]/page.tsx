@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import data from "../../data.json";
+import { getCar } from "src/api/cars";
 
 type Props = {
   params: {
@@ -7,10 +7,8 @@ type Props = {
   };
 };
 
-export default function CarDetail({ params }: Props) {
-  const car = data.cars.find(
-    (car) => car.link.href.replace("/cars/", "") === params.id
-  );
+export default async function CarDetail({ params }: Props) {
+  const car = await getCar(params.id);
 
   if (!car) return notFound();
 
