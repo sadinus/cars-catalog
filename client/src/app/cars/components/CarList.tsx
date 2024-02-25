@@ -3,7 +3,7 @@ import { CarCard } from "./CarCard";
 
 type Props = {
   cars: Car[];
-  carType?: CarFilterOptions;
+  carType: CarFilterOptions;
 };
 
 const CarList = ({ cars, carType }: Props) => {

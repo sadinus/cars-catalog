@@ -4,12 +4,12 @@ import { getCars } from "src/api/cars";
 import { CarFilter } from "./components/CarFilter";
 
 type Props = {
-  searchParams: { carType: CarFilterOptions | undefined };
+  searchParams: { carType?: CarFilterOptions };
 };
 
 export default async function Cars({ searchParams }: Props) {
   const cars = await getCars();
-  const carType = searchParams.carType;
+  const carType = searchParams.carType ?? "ALL";
 
   return (
     <main className="container mx-auto">
