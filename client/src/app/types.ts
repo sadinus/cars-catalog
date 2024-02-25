@@ -6,11 +6,11 @@ export type Car = {
   vehicleType: CarType;
 };
 
-export type Link = {
+export type CarFilterOptions = CarType | "ALL";
+
+type Link = {
   href: string;
   title: string;
 };
 
-export type CarType = "PB" | "SU";
-
-export type CarFilterOptions = CarType | "ALL";
+type CarType = "PB" | "SU";
