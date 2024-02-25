@@ -1,20 +1,15 @@
-"use client";
-import { Car, CarFilterOptions } from "../types";
+import { CarFilterOptions } from "../types";
 import CarList from "./components/CarList";
 import { getCars } from "src/api/cars";
-import { useEffect, useState } from "react";
 import { CarFilter } from "./components/CarFilter";
-import { useSearchParams } from "next/navigation";
 
-export default function Cars() {
-  const [cars, setCars] = useState<Car[]>([]);
+type Props = {
+  searchParams: { carType: CarFilterOptions | undefined };
+};
 
-  const searchParams = useSearchParams();
-  const carType = (searchParams.get("carType") as CarFilterOptions) ?? "ALL";
-
-  useEffect(() => {
-    getCars().then(setCars);
-  }, []);
+export default async function Cars({ searchParams }: Props) {
+  const cars = await getCars();
+  const carType = searchParams.carType;
 
   return (
     <main className="container mx-auto">
