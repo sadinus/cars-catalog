@@ -1,15 +1,15 @@
-import { CarFilterOptions } from "../types";
 import CarList from "./components/CarList";
 import { getCars } from "src/api/cars";
 import { CarFilter } from "./components/CarFilter";
+import { CarType } from "../types";
 
 type Props = {
-  searchParams: { carType?: CarFilterOptions };
+  searchParams: { carType?: CarType };
 };
 
 export default async function Cars({ searchParams }: Props) {
   const cars = await getCars();
-  const carType = searchParams.carType ?? "ALL";
+  const carType = searchParams.carType;
 
   return (
     <main className="container mx-auto">

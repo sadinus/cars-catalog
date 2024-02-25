@@ -1,16 +1,15 @@
-import { Car, CarFilterOptions } from "../../types";
+import { Car, CarType } from "../../types";
 import { CarCard } from "./CarCard";
 
 type Props = {
   cars: Car[];
-  carType: CarFilterOptions;
+  carType?: CarType;
 };
 
 const CarList = ({ cars, carType }: Props) => {
-  const filteredCars =
-    carType !== "ALL"
-      ? cars.filter((car) => car.vehicleType === carType)
-      : cars;
+  const filteredCars = carType
+    ? cars.filter((car) => car.vehicleType === carType)
+    : cars;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

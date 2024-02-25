@@ -21,9 +21,7 @@ const mockCars: Car[] = [
 
 describe("CarList component", () => {
   it("renders correctly with provided cars", () => {
-    const { getByText, getAllByRole } = render(
-      <CarList cars={mockCars} carType="ALL" />
-    );
+    const { getByText, getAllByRole } = render(<CarList cars={mockCars} />);
 
     mockCars.forEach((car) => {
       expect(getByText(car.title)).toBeInTheDocument();
