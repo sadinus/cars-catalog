@@ -26,7 +26,7 @@ export const CarFilter = () => {
       ref={filterRef}
       onChange={handleFilterChange}
     >
-      <option value="">All</option>
+      <option value="ALL">All</option>
       <option value="PB">Petrol</option>
       <option value="SU">Sports Utility</option>
     </select>

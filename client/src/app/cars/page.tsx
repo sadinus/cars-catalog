@@ -13,11 +13,7 @@ export default function Cars() {
   const carType = (searchParams.get("carType") as CarFilterOptions) ?? "ALL";
 
   useEffect(() => {
-    async function fetchCars() {
-      const carsData = await getCars();
-      setCars(carsData);
-    }
-    fetchCars();
+    getCars().then(setCars);
   }, []);
 
   return (

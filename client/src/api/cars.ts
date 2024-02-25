@@ -9,8 +9,7 @@ export async function getCars() {
 }
 
 export async function getCar(id: string) {
-  return fetch(`${API_URL}/cars/`)
-    .then((res) => res.json())
+  return getCars()
     .then((cars: Car[]) =>
       cars.find((car) => car.link.href.replace("/cars/", "") === id)
     )
