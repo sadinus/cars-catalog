@@ -8,7 +8,7 @@ type Props = {
 
 export const CarCard = ({ car }: Props) => {
   return (
-    <div className="relative max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w rounded overflow-hidden shadow-lg relative">
       <Image
         src={"/carimage.jpg"}
         width={1178}

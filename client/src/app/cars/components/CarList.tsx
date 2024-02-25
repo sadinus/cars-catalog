@@ -12,7 +12,7 @@ const CarList = ({ cars, carType }: Props) => {
     : cars;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 lg:gap-8">
       {filteredCars.map((car) => (
         <CarCard car={car} key={car.id} />
       ))}

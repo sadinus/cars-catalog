@@ -25,15 +25,21 @@ export const CarFilter = () => {
   }
 
   return (
-    <select
-      className="border p-2 rounded-md"
-      defaultValue={query ?? ""}
-      ref={filterRef}
-      onChange={handleFilterChange}
-    >
-      <option value="">All</option>
-      <option value="PB">Petrol</option>
-      <option value="SU">Sports Utility</option>
-    </select>
+    <>
+      <label htmlFor="carType" className="mr-2">
+        Filter:
+      </label>
+      <select
+        className="border p-2 mb-4 rounded-md w-full md:w-2/12"
+        name="carType"
+        defaultValue={query ?? ""}
+        ref={filterRef}
+        onChange={handleFilterChange}
+      >
+        <option value="">All</option>
+        <option value="PB">Petrol</option>
+        <option value="SU">Sports Utility</option>
+      </select>
+    </>
   );
 };
