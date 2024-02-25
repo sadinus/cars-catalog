@@ -10,8 +10,8 @@ export async function getCars() {
 
 export async function getCar(id: string) {
   return getCars()
-    .then((cars: Car[]) =>
+    .then((cars) =>
       cars.find((car) => car.link.href.replace("/cars/", "") === id)
     )
-    .then((data) => data as Car);
+    .then((data) => data);
 }
