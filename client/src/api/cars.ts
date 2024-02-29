@@ -9,9 +9,9 @@ export async function getCars() {
 }
 
 export async function getCar(id: string) {
-  return getCars()
-    .then((cars) =>
-      cars.find((car) => car.link.href.replace("/cars/", "") === id)
-    )
-    .then((data) => data);
+  const carHref = `/cars/${id}`;
+
+  return fetch(`${API_URL}/cars?link.href=${carHref}`)
+    .then((res) => res.json())
+    .then((data) => data[0] as Car);
 }
