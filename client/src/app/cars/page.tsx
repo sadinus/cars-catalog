@@ -15,7 +15,7 @@ export default async function Cars({ searchParams }: Props) {
 
   return (
     <main className="container mx-auto">
-      <h1 className="text-3xl font-bold my-4">Cars</h1>
+      <h1 className="text-3xl font-bold px-6 md:px-0 mb-2">Cars</h1>
       <CarFilter />
       <Suspense
         fallback={

@@ -25,7 +25,7 @@ export const CarFilter = () => {
   }
 
   return (
-    <>
+    <div className="px-6 md:px-0">
       <label htmlFor="carType" className="mr-2">
         Filter:
       </label>
@@ -40,6 +40,6 @@ export const CarFilter = () => {
         <option value="PB">Petrol</option>
         <option value="SU">Sports Utility</option>
       </select>
-    </>
+    </div>
   );
 };

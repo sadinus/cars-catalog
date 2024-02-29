@@ -24,7 +24,7 @@ export const CarCard = ({ car }: Props) => {
         </p>
         <Link
           href={car.link.href}
-          className="absolute bottom-0 right-0 mb-4 mr-4 mt-8"
+          className="absolute bottom-0 right-0 mb-4 mr-6 mt-8"
         >
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             View Details

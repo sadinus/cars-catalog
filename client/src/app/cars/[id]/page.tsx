@@ -13,7 +13,7 @@ export default async function CarDetail({ params }: Props) {
   if (!car) return notFound();
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-6 md:px-2">
       <h1 className="text-3xl font-bold my-4">Car Detail</h1>
       <p className="text-xl">{car?.title}</p>
     </div>
