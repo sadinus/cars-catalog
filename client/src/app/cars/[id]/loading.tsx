@@ -1,5 +1,10 @@
+import { SkeletonLine } from "../components/Skeleton";
+
 export default function Loading() {
   return (
-    <div className="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+    <div className="container mx-auto">
+      <h1 className="text-3xl font-bold my-4">Car Detail</h1>
+      <SkeletonLine />
+    </div>
   );
 }
