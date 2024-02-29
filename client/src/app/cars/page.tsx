@@ -2,6 +2,8 @@ import CarList from "./components/CarList";
 import { getCars } from "src/api/cars";
 import { CarFilter } from "./components/CarFilter";
 import { CarType } from "../types";
+import { Suspense } from "react";
+import { SkeletonCard, SkeletonList } from "./components/Skeleton";
 
 type Props = {
   searchParams: { carType?: CarType };
@@ -15,7 +17,15 @@ export default async function Cars({ searchParams }: Props) {
     <main className="container mx-auto">
       <h1 className="text-3xl font-bold my-4">Cars</h1>
       <CarFilter />
-      <CarList cars={cars} carType={carType} />
+      <Suspense
+        fallback={
+          <SkeletonList amount={10}>
+            <SkeletonCard />
+          </SkeletonList>
+        }
+      >
+        <CarList cars={cars} carType={carType} />
+      </Suspense>
     </main>
   );
 }
