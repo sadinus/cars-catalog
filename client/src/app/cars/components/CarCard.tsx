@@ -13,6 +13,7 @@ export const CarCard = ({ car }: Props) => {
         src={"/carimage.jpg"}
         width={1178}
         height={762}
+        priority
         alt={car.title}
         className="w-full h-40 object-cover mb-2"
       />
