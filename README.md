@@ -2,7 +2,7 @@
 
 The app is a recruitment task. Allows to: browse cars, filter cars and select a specific one to get more information (displays title).
 
-**You can see the live website [here](https://65e0b879652c8c22c9d219f1--cars-catalog-task.netlify.app/cars).**
+**You can see the live website [here](https://cars-catalog-task.netlify.app/cars).**
 
 ## Libraries/tools used
 
