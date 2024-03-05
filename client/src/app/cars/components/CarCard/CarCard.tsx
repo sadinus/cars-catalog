@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Car } from "../../types";
+import { Car } from "../../../types";
+import carImage from "./carimage.jpg";
 
 type Props = {
   car: Car;
@@ -10,9 +11,7 @@ export const CarCard = ({ car }: Props) => {
   return (
     <div className="max-w rounded overflow-hidden shadow-lg relative">
       <Image
-        src={"/carimage.jpg"}
-        width={1178}
-        height={762}
+        src={carImage}
         priority
         alt={car.title}
         className="w-full h-40 object-cover mb-2"
