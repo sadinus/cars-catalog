@@ -1,11 +1,16 @@
 import { notFound } from "next/navigation";
-import { getCar } from "src/api/cars";
+import { getCar, getCars } from "src/api/cars";
 
 type Props = {
   params: {
     id: string;
   };
 };
+
+export async function generateStaticParams() {
+  const cars = await getCars();
+  return cars.map((car) => ({ id: car.link.href.split("/").pop() }));
+}
 
 export default async function CarDetail({ params }: Props) {
   const car = await getCar(params.id);
