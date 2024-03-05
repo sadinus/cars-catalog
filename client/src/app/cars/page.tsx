@@ -1,4 +1,4 @@
-import CarList from "./components/CarList";
+import { CarList } from "./components/CarList";
 import { getCars } from "src/api/cars";
 import { CarFilter } from "./components/CarFilter";
 import { CarType } from "../types";

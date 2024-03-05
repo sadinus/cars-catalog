@@ -1,12 +1,12 @@
-import { Car, CarType } from "../../types";
-import { CarCard } from "./CarCard";
+import { Car, CarType } from "../../../types";
+import { CarCard } from "../CarCard";
 
 type Props = {
   cars: Car[];
   carType?: CarType;
 };
 
-const CarList = ({ cars, carType }: Props) => {
+export const CarList = ({ cars, carType }: Props) => {
   const filteredCars = carType
     ? cars.filter((car) => car.vehicleType === carType)
     : cars;
@@ -19,5 +19,3 @@ const CarList = ({ cars, carType }: Props) => {
     </div>
   );
 };
-
-export default CarList;

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import CarList from "./CarList";
-import { Car } from "../../types";
+import { CarList } from "./CarList";
+import { Car } from "../../../types";
 
 const mockCars: Car[] = [
   {
