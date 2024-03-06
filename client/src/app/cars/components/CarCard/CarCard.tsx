@@ -9,23 +9,27 @@ type Props = {
 
 export const CarCard = ({ car }: Props) => {
   return (
-    <div className="max-w rounded overflow-hidden shadow-lg relative">
-      <Image
-        src={carImage}
-        priority
-        alt={car.title}
-        className="w-full h-40 object-cover mb-2"
-      />
-      <div className="px-6 py-6 pb-8">
+    <div className="max-w rounded overflow-hidden shadow-lg flex flex-col w-full">
+      <div className={"relative w-full h-40"}>
+        <Image
+          src={carImage}
+          fill
+          placeholder="blur"
+          priority
+          alt={car.title}
+          className={"object-cover"}
+        />
+      </div>
+      <div className="px-6 py-6 pb-8 flex flex-col w-full">
         <div className="font-bold text-xl mb-2">{car.brand}</div>
         <p className="text-gray-700 text-base mb-2">{car.title}</p>
         <p className="text-gray-700 text-base mb-2">
           carType: {car.vehicleType}
         </p>
-        <Link
-          href={car.link.href}
-          className="absolute bottom-0 right-0 mb-4 mr-6 mt-8"
-        >
+      </div>
+      <div className="flex-grow" />
+      <div className="flex justify-end mr-6 mb-4">
+        <Link href={car.link.href}>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
             View Details
           </button>
