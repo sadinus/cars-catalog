@@ -3,20 +3,20 @@ import { getCar, getCars } from "src/api/cars";
 
 type Props = {
   params: {
-    id: string;
+    urlId: string;
   };
 };
 
 export async function generateStaticParams() {
   const cars = await getCars();
   const result = cars.map(({ urlId }) => {
-    return { id: urlId };
+    return { urlId };
   });
   return result;
 }
 
 export default async function CarDetail({ params }: Props) {
-  const car = await getCar(params.id);
+  const car = await getCar(params.urlId);
 
   if (!car) return notFound();
 
