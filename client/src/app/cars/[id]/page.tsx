@@ -9,7 +9,10 @@ type Props = {
 
 export async function generateStaticParams() {
   const cars = await getCars();
-  return cars.map((car) => ({ id: car.link.href.split("/").pop() }));
+  const result = cars.map(({ urlId }) => {
+    return { id: urlId };
+  });
+  return result;
 }
 
 export default async function CarDetail({ params }: Props) {
